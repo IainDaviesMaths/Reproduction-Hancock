@@ -29,7 +29,7 @@ for horiz=1:5
     end
 end
 
-imagesc(finalimage)
+imshow(finalimage)
 set(gca,'visible','off')
 set(gca,'xtick',[])
 saveas(gcf,'Figure2.png')

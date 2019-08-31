@@ -4,7 +4,6 @@
 Reproduction of Hancock, P. et al, 1991 The Principal Components of Natural Images
 
 ![image](./python2/output/Figure2_movie.gif)
-
 [file:python2/output/Figure2_movie.gif]
 
 

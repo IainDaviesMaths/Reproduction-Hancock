@@ -25,9 +25,13 @@ The computations were completed on a HP Pavilion Notebook with an Intel Core i3.
 #### Usage:
     - No CLI at the moment
     
-#### ToDo: Add makefile/testing suites
+#### ToDo:
+    - Add makefile/testing suites
+    - Finish all figures
 
 #### Changes:
+
+1. Added movies
 
 1. Vectorised python2/sageupate.py
 

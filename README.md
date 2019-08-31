@@ -8,8 +8,6 @@ Reproduction of Hancock, P. et al, 1991 The Principal Components of Natural Imag
 [file:python2/output/Figure2_movie.gif]
 
 
-1. Added iteration number as arguments.
-
 ### `matlab/`
 
 To use this code, clone the repository then run the makefile using "make all".
@@ -32,3 +30,5 @@ The computations were completed on a HP Pavilion Notebook with an Intel Core i3.
 #### Changes:
 
 1. Vectorised python2/sageupate.py
+
+1. Added iteration number as arguments.

@@ -33,7 +33,5 @@ The computations were completed on a HP Pavilion Notebook with an Intel Core i3.
 #### Changes:
 
 1. Added movies
-
 1. Vectorised python2/sageupate.py
-
 1. Added iteration number as arguments.

@@ -1,8 +1,10 @@
 
 ### A Python2 translation trying to reproduce Hancock, P. et al, 1991 The Principal Components of Natural Images
 
-python2/output/Figure2_movie.gif
-![](python2/output/Figure2_movie.gif
+![image](./python2/output/Figure2_movie.gif)
+
+[file:python2/output/Figure2_movie.gif]
+
 ### ToDo: Add testing suites
 
 ### Changes:

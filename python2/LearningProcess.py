@@ -23,7 +23,7 @@ def LearningProcess( num_unit,
     '''
     size = (num_unit,side_pixels**2)
     weights=0.06*(np.random.random(size)-0.5);
-    
+    mask =  Gaussian(side_pixels)
     for iIter in range(nIter):
         if not iIter %10:
             print ("%s\t/\t%s"%(iIter,nIter))
@@ -35,8 +35,8 @@ def LearningProcess( num_unit,
             image_y:image_y + side_pixels,
             image_no,
         ]
-        image = image - meangrey
-        image = np.dot(image, Gaussian(side_pixels) )
+        image =  image - meangrey
+        image =  image * mask
         image_vec = np.reshape( image, (side_pixels**2,1))
         image_vec = image_vec / l2__norm(image_vec)
         weights = sagerupdate( image_vec, weights, lr)

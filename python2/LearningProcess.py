@@ -11,7 +11,9 @@ def LearningProcess( num_unit,
                     num_image,
                     meangrey,
                     nIter = 120000,
-                   lr = 1.):
+                   lr = 1.,
+                   callback = lambda x:x,
+                   ):
     '''
     %num_unit       Number of output units in the network.
     %side_pixels    Number of pixels in a side of the presented images.
@@ -42,6 +44,7 @@ def LearningProcess( num_unit,
         weights = sagerupdate( image_vec, weights, lr)
         if iIter%20000 ==0:
             lr = lr /2.
+        callback(iIter, image, weights,)
     return weights
     
     

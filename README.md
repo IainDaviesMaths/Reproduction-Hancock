@@ -23,11 +23,11 @@ The computations were completed on a HP Pavilion Notebook with an Intel Core i3.
 ### `python2/` 
 
 #### Usage:
-    - No CLI at the moment
+  - No CLI at the moment
     
 #### ToDo:
-    - Add makefile/testing suites
-    - Finish all figures
+  - Add makefile/testing suites
+  - Finish all figures
 
 #### Changes:
 

@@ -26,6 +26,7 @@ The computations were completed on a HP Pavilion Notebook with an Intel Core i3.
   - No CLI at the moment
     
 #### ToDo:
+  - Add iteration number to movies
   - Add makefile/testing suites
   - Finish all figures
 

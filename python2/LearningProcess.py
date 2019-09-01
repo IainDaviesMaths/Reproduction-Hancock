@@ -5,11 +5,25 @@ from sagerupdate import sagerupdate
 def l2__norm(x,axis=None,keepdims=1,**kw):
     return np.sqrt(np.sum(np.square(x),
                           axis=axis,keepdims=keepdims,**kw))
+def _sampler(image_base, num_image, side_pixels, meangrey,mask):
+#         num_image = 
+        image_no = np.random.randint(num_image)
+        image_x = np.random.randint(257 - side_pixels)
+        image_y = np.random.randint(257 - side_pixels)
+        image = image_base[
+            image_x:image_x + side_pixels,
+            image_y:image_y + side_pixels,
+            image_no,
+        ]
+        image =  image - meangrey
+        image =  image * mask
+        return image
 def LearningProcess( num_unit,
                      side_pixels, 
                     image_base,
                     num_image,
                     meangrey,
+                    image_sampler = None,
                     nIter = 120000,
                    lr = 1.,
                    callback = lambda x:x,
@@ -23,22 +37,18 @@ def LearningProcess( num_unit,
     nIter: number of iterations
     lr: learning rate
     '''
+    if image_sampler is None:
+        image_sampler = _sampler
     size = (num_unit,side_pixels**2)
     weights=0.06*(np.random.random(size)-0.5);
     mask =  Gaussian(side_pixels)
     for iIter in range(nIter):
         if not iIter %10:
             print ("%s\t/\t%s"%(iIter,nIter))
-        image_no = np.random.randint(num_image)
-        image_x = np.random.randint(257 - side_pixels)
-        image_y = np.random.randint(257 - side_pixels)
-        image = image_base[
-            image_x:image_x + side_pixels,
-            image_y:image_y + side_pixels,
-            image_no,
-        ]
-        image =  image - meangrey
-        image =  image * mask
+        image = image_sampler( image_base, num_image, side_pixels,
+                              meangrey,
+                             mask)       
+
         image_vec = np.reshape( image, (side_pixels**2,1))
         image_vec = image_vec / l2__norm(image_vec)
         weights = sagerupdate( image_vec, weights, lr)

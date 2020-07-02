@@ -1,8 +1,8 @@
-%Plot Figure 3
+%Plot Figure 1
 
 %Simulation parameters
 side_pixels=64;
-num_units=6;
+num_units=15;
 
 %Save the 15 images into a database
 num_image=15;
@@ -12,12 +12,12 @@ standard_image_base=SaveStandardImageBase();
 meangrey=MeanGreyLevel(side_pixels, standard_image_base, num_image);
 
 %Learn weights
-weights=LearningProcessRotated(num_units,side_pixels,standard_image_base,num_image,meangrey);
+weights=LearningProcess(num_units,side_pixels,standard_image_base,num_image,meangrey);
 
 %Plot principal components
-finalimage=zeros(64*1,64*6);
-for horiz=1:6
-    for vert=1:1
+finalimage=zeros(64*3,64*5);
+for horiz=1:5
+    for vert=1:3
         PC=zeros(64,64);
         for I=1:64
             PC(:,I)=weights((vert-1)*5+horiz,(I-1)*64+1:I*64);
@@ -32,4 +32,4 @@ end
 imshow(finalimage)
 set(gca,'visible','off')
 set(gca,'xtick',[])
-saveas(gcf,'Figure3.png')
+saveas(gcf,'Figure1.png')

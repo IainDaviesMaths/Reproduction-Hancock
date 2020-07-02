@@ -1,6 +1,7 @@
 function [ weights ] = LearningProcessRotated(num_unit, side_pixels, image_base, num_image,meangrey)
-%LEARNINGPROCESS simulates the learning process of the network according to
-%Sanger's rule
+%LEARNINGPROCESSROTATED simulates the learning process of the network 
+%according to Sanger's rule with the addition of rotating the image samples
+%by 45 degrees.
 
 %num_unit       Number of output units in the network.
 %side_pixels    Number of pixels in a side of the presented images.

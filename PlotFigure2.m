@@ -4,15 +4,15 @@
 side_pixels=64;
 num_units=15;
 
-%Save the 40 images into a database
-num_image=40;
-extended_image_base=SaveExtendedImageBase();
+%Save the 15 images into a database
+num_image=15;
+standard_image_base=SaveStandardImageBase();
 
 %Extract mean grey level from 20000 samples.
-meangrey=MeanGreyLevel(side_pixels, extended_image_base, num_image);
+meangrey=MeanGreyLevel(side_pixels, standard_image_base, num_image);
 
 %Learn weights
-weights=LearningProcess(num_units,side_pixels,extended_image_base,num_image,meangrey);
+weights=LearningProcess(num_units,side_pixels,standard_image_base,num_image,meangrey);
 
 %Plot principal components
 finalimage=zeros(64*3,64*5);

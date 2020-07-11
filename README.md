@@ -14,3 +14,7 @@ All of the main features of the original Figures 2-8 were reproduced by this cod
 The main challenge in reproducing the results was making the text image similar enough to the original. Text with no large whitespace or font that was too thin failed to produce a PC that corresponded to word spacings.
 
 The computations were completed on a HP Pavilion Notebook with an Intel Core i3. Computation time was typically 5 minutes per Figure.
+
+## Binder
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sje30/Reproduction-Hancock/master)

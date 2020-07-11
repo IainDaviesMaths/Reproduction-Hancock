@@ -61,6 +61,72 @@ Here is the figure:
 ![figure 2](julia-fig2.png)
 
 
+## Figure 3
+
+
+```julia
+PlotFigure3()
+```
+
+Here is the figure:
+
+![figure 3](julia-fig3.png)
+
+## Figure 4
+
+
+```julia
+PlotFigure4()
+```
+
+Here is the figure:
+
+![figure 4](julia-fig4.png)
+
+## Figure 5
+
+
+```julia
+PlotFigure5()
+```
+
+Here is the figure:
+
+![figure 5](julia-fig5.png)
+
+## Figure 6
+
+
+```julia
+PlotFigure6()
+```
+
+Here is the figure:
+
+![figure 6](julia-fig6.png)
+
+## Figure 7
+
+
+```julia
+PlotFigure7()
+```
+
+Here is the figure:
+
+![figure 7](julia-fig7.png)
+
+## Figure 8
+
+
+```julia
+PlotFigure8()
+```
+
+Here is the figure:
+
+![figure 8](julia-fig8.png)
+
 ## Notes
 
 Convert the markdown using `jupytext --to notebook  test.md`

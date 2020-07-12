@@ -4,3 +4,7 @@ all: Figure2.png Figure3.png Figure4.png Figure5.png Figure6.png Figure7.png Fig
 
 Figure%.png: PlotFigure%.m 
 	matlab -nodisplay -nosplash -nodesktop -r "run('$<'); exit;"
+
+julia-figures.ipynb: julia-figures.md
+	jupytext --to notebook  $^
+

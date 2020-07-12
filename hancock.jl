@@ -497,7 +497,7 @@ function PlotFigure6()
         finalimage2[1:side_pixels,(horiz-1)*side_pixels+1:horiz*side_pixels]=PC;
     end
 
-    imshow(finalimage2)
+    ##imshow(finalimage2)
     mosaic=mosaicview(finalimage, finalimage2)
     save("julia-fig6.png", mosaic)
 
@@ -808,7 +808,7 @@ function PlotFigure8()
     end
 
     thresh = comp .< 0.25
-    imshow(thresh)
+    ##imshow(thresh)
     ##    comp=imcomplement(mat2gray(convolution));
     ## Superimpose this onto the full image.
     ##superimp=(mat2gray(full_image)+(im2bw(comp,0.045)));

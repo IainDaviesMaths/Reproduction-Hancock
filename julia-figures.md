@@ -58,66 +58,50 @@ plot(load("julia-fig2.png"))
 
 ```julia
 PlotFigure3()
+plot(load("julia-fig3.png"))
 ```
 
-Here is the figure:
 
-![figure 3](julia-fig3.png)
 
 ## Figure 4
 
 
 ```julia
 PlotFigure4()
+plot(load("julia-fig4.png"))
 ```
-
-Here is the figure:
-
-![figure 4](julia-fig4.png)
 
 ## Figure 5
 
 
 ```julia
 PlotFigure5()
+plot(load("julia-fig5.png"))
 ```
-
-Here is the figure:
-
-![figure 5](julia-fig5.png)
 
 ## Figure 6
 
 
 ```julia
 PlotFigure6()
+plot(load("julia-fig6.png"))
 ```
-
-Here is the figure:
-
-![figure 6](julia-fig6.png)
 
 ## Figure 7
 
 
 ```julia
 PlotFigure7()
+plot(load("julia-fig7.png"))
 ```
-
-Here is the figure:
-
-![figure 7](julia-fig7.png)
 
 ## Figure 8
 
 
 ```julia
 PlotFigure8()
+plot(load("julia-fig8.png"))
 ```
-
-Here is the figure:
-
-![figure 8](julia-fig8.png)
 
 ## Notes
 

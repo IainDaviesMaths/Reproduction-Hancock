@@ -42,24 +42,16 @@ include("hancock.jl")
 
 ```julia
 PlotFigure1()
+plot(load("julia-fig1.png"))
 ```
-
-Here is the figure:
-
-![figure 1](julia-fig1.png)
-
 
 ## Figure 2
 
 
 ```julia
 PlotFigure2()
+plot(load("julia-fig2.png"))
 ```
-
-Here is the figure:
-
-![figure 2](julia-fig2.png)
-
 
 ## Figure 3
 

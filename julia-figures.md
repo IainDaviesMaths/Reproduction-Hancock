@@ -15,7 +15,6 @@ jupyter:
 
 # Introduction
 
-
 Add the packages that we require for this session:
 
 ```julia

@@ -16,10 +16,8 @@ JULIA-FIGS := julia-fig1.png julia-fig2.png julia-fig3.png julia-fig4.png \
 .PHONY: clean-julia run-julia
 
 ## This generates all of the figures
-run-julia: $(JULIA-FIGS)
-
-$(JULIA-FIGS): runall.jl hancock.jl
-	time julia runall.jl
+run-julia: 
+	julia runall.jl
 
 ## This removes all the julia figures.
 clean-julia:

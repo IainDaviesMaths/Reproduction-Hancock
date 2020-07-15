@@ -721,7 +721,6 @@ function PlotFigure7()
         finalimage3[1:side_pixels,(horiz-1)*side_pixels+1:horiz*side_pixels]=PC;
     end
 
-
     mosaic = mosaicview(finalimage1, finalimage2, finalimage3, nrow=3)
     save("julia-fig7.png", mosaic)
 end

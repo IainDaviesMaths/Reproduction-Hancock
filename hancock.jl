@@ -497,6 +497,8 @@ function PlotFigure6()
         finalimage2[1:side_pixels,(horiz-1)*side_pixels+1:horiz*side_pixels]=PC;
     end
 
+    finalimage2 = repeat(finalimage2, inner=[4,4]); #  enlarge for plot.
+
     ##imshow(finalimage2)
     mosaic=mosaicview(finalimage, finalimage2)
     save("julia-fig6.png", mosaic)

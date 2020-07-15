@@ -722,7 +722,12 @@ function PlotFigure7()
         ## Fill in final image with PC.
         finalimage3[1:side_pixels,(horiz-1)*side_pixels+1:horiz*side_pixels]=PC;
     end
-
+   
+	
+	finalimage2 = repeat(finalimage2, inner=[2,2]);
+    finalimage3 = repeat(finalimage3, inner=[4,4]);
+    
+    
     mosaic = mosaicview(finalimage1, finalimage2, finalimage3, nrow=3)
     save("julia-fig7.png", mosaic)
 end

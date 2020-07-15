@@ -1,3 +1,5 @@
+## Extra packages required for this project.
+
 import Pkg
 Pkg.add("ImageFiltering")
 Pkg.add("Plots")

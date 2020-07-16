@@ -17,4 +17,5 @@ The computations were completed on a HP Pavilion Notebook with an Intel Core i3.
 
 ## Binder
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sje30/Reproduction-Hancock/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/IainDaviesMaths/Reproduction-Hancock/master?filepath=julia-figures.ipynb)
+

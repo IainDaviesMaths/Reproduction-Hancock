@@ -1,7 +1,7 @@
 # Reproduction-Hancock
 Reproduction of Hancock, P. et al, 1991 The Principal Components of Natural Images
 
-To use this code, clone the repository then run the makefile using "make all".
+To use this code, clone the repository then run the makefile using "make all". Code was originally written in MATLAB then converted to Julia. Both MATLAB and Julia code are provided in this repository.
 
 The paper by Hancock et al aims to replicate receptive fields of V1 cells using the method of Principle Component Analysis (PCA) in a neural network. It uses an algorithm by Sanger to produce 15 output neurons representing the first 15 PCs of a series of greyscale images. 
 The approach taken in the code stored in this repository is to reproduce Sanger's algorithm in MATLAB code and apply it to a random selection of the original natural images used to create Figures 2-6 following the method in Hancock. The original natural images are stored here under images1-15, new1-15 and two0-9. 

@@ -1,8 +1,8 @@
 # Makefile for Hancock et al reproductions
 
-all: Figure2.png Figure3.png Figure4.png Figure5.png Figure6.png Figure7.png Figure8.png
+all: Figure1.png Figure2.png Figure3.png Figure4.png Figure5.png Figure6.png Figure7.png Figure8.png
 
-Figure%.png: PlotFigure%.m 
+Figure%.png: matlab-code/PlotFigure%.m 
 	matlab -nodisplay -nosplash -nodesktop -r "run('$<'); exit;"
 
 

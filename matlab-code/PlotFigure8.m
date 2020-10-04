@@ -18,9 +18,6 @@ meangrey = MeanGreyLevel(side_pixels, text_image, num_image);
 %Learn weights
 weights = LearningProcess(num_units,side_pixels,text_image,num_image,meangrey,0);
 
-%Save full image
-full_image = text_image(:,:,1);
-
 %Extract filter which corresponds to spaces between words.
 filter = zeros(side_pixels,side_pixels);
 for I = 1:side_pixels
@@ -29,13 +26,13 @@ end
 filter = (filter-min(min(filter)))/(max(max(filter))-min(min(filter)));
 
 %Convolve full image with filter and take its compliment.
-convolution = conv2(full_image,filter,'same');
+convolution = conv2(text_image,filter,'same');
 comp = imcomplement(mat2gray(convolution));
 %Superimpose this onto the full image.
-superimp = (mat2gray(full_image)+(im2bw(comp,0.045)));
+superimp = (mat2gray(text_image)+(im2bw(comp,0.045)));
 
 figure(1)
-subplot(1,3,1); imshow(mat2gray(full_image)); title('Text Image')
+subplot(1,3,1); imshow(mat2gray(text_image)); title('Text Image')
 subplot(1,3,2); imshow(mat2gray(comp.^0.4)); title('Convolution')
 subplot(1,3,3); imshow(mat2gray(superimp)); title('Superimposition')
 

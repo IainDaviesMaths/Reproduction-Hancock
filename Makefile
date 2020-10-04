@@ -10,19 +10,21 @@ Figure%.png: matlab-code/PlotFigure%.m
 ######################################################################
 ## Running the Julia code.
 
-JULIA-FIGS := julia-fig1.png julia-fig2.png julia-fig3.png julia-fig4.png \
-              julia-fig5.png julia-fig6.png julia-fig7.png julia-fig8.png
+JULIA-FIGS := julia-figs/julia-fig1.png julia-figs/julia-fig2.png \
+	      julia-figs/julia-fig3.png julia-figs/julia-fig4.png \
+              julia-figs/julia-fig5.png julia-figs/julia-fig6.png \
+	      julia-figs/julia-fig7.png julia-figs/julia-fig8.png
 
 .PHONY: clean-julia run-julia
 
 ## This generates all of the figures
 run-julia: 
-	julia runall.jl
+	julia julia-code/runall.jl
 
 ## This removes all the julia figures.
 clean-julia:
 	rm -f $(JULIA-FIGS)
 
-julia-figures.ipynb: julia-figures.md
+julia-figures.ipynb: julia-code/julia-figures.md
 	jupytext --to notebook  $^
 

@@ -153,8 +153,7 @@ function PlotFigure2()
     side_pixels = 64
     num_units = 15
     
-    # Fix seed
-    # srand(1234)
+    # Fix seed (TO BE DONE)
     
     # Save the 15 images into a database
     num_image = 15
@@ -215,8 +214,7 @@ function PlotFigure3()
     side_pixels = 64
     num_units = 15
     
-    # Fix seed
-    # srand(1234)
+    # Fix seed (TO BE DONE)
     
     # Save the 15 images into a database
     num_image = 40
@@ -256,8 +254,7 @@ function PlotFigure4()
     side_pixels = 64
     num_units = 15
     
-    # Fix seed
-    # srand(1234)
+    # Fix seed (TO BE DONE)
     
     # Save the 15 images into a database
     num_image = 15
@@ -302,8 +299,7 @@ function PlotFigure5()
 
     ## Generate weights for 15 image case
 
-	# Fix seed
-	# srand(1234)
+	# Fix seed (TO BE DONE)
 
     ## Simulation parameters
     side_pixels = 64;
@@ -401,8 +397,7 @@ function PlotFigure6()
 
     ## Plot Figure 6
 
-	# Fix seed
-	# srand(1234)
+	# Fix seed (TO BE DONE)
 
     ## Double scale:
 
@@ -492,8 +487,7 @@ end
 
 function PlotFigure7()
     
-    # Fix seed
-    # srand(1234)
+    # Fix seed (TO BE DONE)
     
     ## Save the text with Century font.
 	num_image = 1;
@@ -600,8 +594,7 @@ end
 
 function PlotFigure8() 
 
-	# Fix seed
-	# srand(1234)
+	# Fix seed (TO BE DONE)
 
     ## Save the text with Century font.
 	num_image = 1;
@@ -657,8 +650,7 @@ end
 
 function PlotFigure9()
     
-    # Fix seed
-    # srand(1234)
+    # Fix seed (TO BE DONE)
     
     ## Save the text with Calibri font.
 	num_image = 1;

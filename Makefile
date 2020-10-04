@@ -1,6 +1,6 @@
 # Makefile for Hancock et al reproductions
 
-all: Figure1.png Figure2.png Figure3.png Figure4.png Figure5.png Figure6.png Figure7.png Figure8.png
+all: Figure1.png Figure2.png Figure3.png Figure4.png Figure5.png Figure6.png Figure7.png Figure8.png Figure9.png
 
 Figure%.png: matlab-code/PlotFigure%.m 
 	matlab -nodisplay -nosplash -nodesktop -r "run('$<'); exit;"
@@ -13,7 +13,8 @@ Figure%.png: matlab-code/PlotFigure%.m
 JULIA-FIGS := julia-figs/julia-fig1.png julia-figs/julia-fig2.png \
 	      julia-figs/julia-fig3.png julia-figs/julia-fig4.png \
               julia-figs/julia-fig5.png julia-figs/julia-fig6.png \
-	      julia-figs/julia-fig7.png julia-figs/julia-fig8.png
+	      julia-figs/julia-fig7.png julia-figs/julia-fig8.png \
+	      julia-figs/julia-fig9.png
 
 .PHONY: clean-julia run-julia
 

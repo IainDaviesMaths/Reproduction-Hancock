@@ -15,12 +15,12 @@ using Statistics
 
 include("hancock.jl")
 
-#PlotFigure1()
-#PlotFigure2()
-#PlotFigure3()
-#PlotFigure4()
-#PlotFigure5()
-#PlotFigure6()
+PlotFigure1()
+PlotFigure2()
+PlotFigure3()
+PlotFigure4()
+PlotFigure5()
+PlotFigure6()
 PlotFigure7()
 PlotFigure8()
 PlotFigure9()

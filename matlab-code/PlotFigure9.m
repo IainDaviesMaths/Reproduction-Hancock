@@ -87,7 +87,7 @@ weights = LearningProcess(num_units,side_pixels,text_image,num_image,meangrey,0)
 
 %Plot principal components
 finalimage = zeros(side_pixels,side_pixels*9);
-image = text_image(30:30+side_pixels-1,50:50+side_pixels-1,1);
+image = text_image(20:20+side_pixels-1,50:50+side_pixels-1,1);
 finalimage(1:side_pixels,1:side_pixels) = mat2gray(image);
 for horiz = 2:9
     PC = zeros(side_pixels,side_pixels);

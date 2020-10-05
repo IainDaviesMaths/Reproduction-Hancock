@@ -174,8 +174,8 @@ function PlotFigure2()
                 PC[:,I] = weights[(vert-1)*5+horiz,(I-1)*64+1:I*64];
             end
             # Rescale each PC.
-            min = minimum(weights)
-            max = maximum(weights)
+            min = minimum(PC)
+            max = maximum(PC)
             PC = (PC .- min) ./ ( max - min);
             # Fill in final image with PC.
             finalimage[(vert-1)*64+1:vert*64,(horiz-1)*64+1:horiz*64] = PC;
@@ -235,8 +235,8 @@ function PlotFigure3()
                 PC[:,I] = weights[(vert-1)*5+horiz,(I-1)*64+1:I*64];
             end
             # Rescale each PC.
-            min = minimum(weights)
-            max = maximum(weights)
+            min = minimum(PC)
+            max = maximum(PC)
             PC = (PC .- min) ./ ( max - min);
             # Fill in final image with PC.
             finalimage[(vert-1)*64+1:vert*64,(horiz-1)*64+1:horiz*64] = PC;
@@ -276,8 +276,8 @@ function PlotFigure4()
                 PC[:,I] = weights[(vert-1)*5+horiz,(I-1)*64+1:I*64];
             end
             # Rescale each PC.
-            min = minimum(weights)
-            max = maximum(weights)
+            min = minimum(PC)
+            max = maximum(PC)
             PC = (PC .- min) ./ ( max - min);
             # Fill in final image with PC.
             finalimage[(vert-1)*64+1:vert*64,(horiz-1)*64+1:horiz*64] = PC;
@@ -515,8 +515,8 @@ function PlotFigure7()
             PC[:,I] = weights[horiz-1,(I-1)*side_pixels+1:I*side_pixels];
         end
         ## Rescale each PC.
-        min = minimum(weights)
-        max = maximum(weights)
+        min = minimum(PC)
+        max = maximum(PC)
         PC = (PC .- min) ./ ( max - min);
 
         ## Fill in final image with PC.
@@ -544,8 +544,8 @@ function PlotFigure7()
             PC[:,I] = weights[horiz-1,(I-1)*side_pixels+1:I*side_pixels];
         end
         ## Rescale each PC.
-        min = minimum(weights)
-        max = maximum(weights)
+        min = minimum(PC)
+        max = maximum(PC)
         PC = (PC .- min) ./ ( max - min);
         ## Fill in final image with PC.
         finalimage2[1:side_pixels,(horiz-1)*side_pixels+1:horiz*side_pixels] = PC;
@@ -574,8 +574,8 @@ function PlotFigure7()
             PC[:,I] = weights[horiz-1,(I-1)*side_pixels+1:I*side_pixels];
         end
         ## Rescale each PC.
-        min = minimum(weights)
-        max = maximum(weights)
+        min = minimum(PC)
+        max = maximum(PC)
         PC = (PC .- min) ./ ( max - min);
 
         ## Fill in final image with PC.
@@ -678,8 +678,8 @@ function PlotFigure9()
             PC[:,I] = weights[horiz-1,(I-1)*side_pixels+1:I*side_pixels];
         end
         ## Rescale each PC.
-        min = minimum(weights)
-        max = maximum(weights)
+        min = minimum(PC)
+        max = maximum(PC)
         PC = (PC .- min) ./ ( max - min);
 
         ## Fill in final image with PC.
@@ -707,8 +707,8 @@ function PlotFigure9()
             PC[:,I] = weights[horiz-1,(I-1)*side_pixels+1:I*side_pixels];
         end
         ## Rescale each PC.
-        min = minimum(weights)
-        max = maximum(weights)
+        min = minimum(PC)
+        max = maximum(PC)
         PC = (PC .- min) ./ ( max - min);
         ## Fill in final image with PC.
         finalimage2[1:side_pixels,(horiz-1)*side_pixels+1:horiz*side_pixels] = PC;
@@ -737,8 +737,8 @@ function PlotFigure9()
             PC[:,I] = weights[horiz-1,(I-1)*side_pixels+1:I*side_pixels];
         end
         ## Rescale each PC.
-        min = minimum(weights)
-        max = maximum(weights)
+        min = minimum(PC)
+        max = maximum(PC)
         PC = (PC .- min) ./ ( max - min);
 
         ## Fill in final image with PC.

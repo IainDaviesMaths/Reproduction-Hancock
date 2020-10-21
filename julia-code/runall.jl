@@ -1,8 +1,13 @@
 ## Simply run all of the Julia figures
 ## julia runall.jl
-## If any packages are missing, run setup.jl
 ## [2020-07-14 Tue]
 
+
+
+## If any packages are missing, they should be loaded by  this chunk.
+using Pkg
+Pkg.activate(".")
+Pkg.instantiate()
 
 using ImageFiltering
 using Plots
@@ -11,7 +16,7 @@ using ImageMagick
 using Printf
 using LinearAlgebra             # for norm(.)
 using Statistics       
-
+using Random
 
 include("hancock.jl")
 

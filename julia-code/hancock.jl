@@ -23,7 +23,7 @@ end
 function PlotFigure1()
     standard_image_base = SaveStandardImageBase()
     mosaic = mosaicview(standard_image_base; nrow = 3)
-    save("julia-figs/julia-fig1.png", mosaic)
+    save("julia-fig1.png", mosaic)
 end
 
 
@@ -187,7 +187,7 @@ function PlotFigure2()
     ##imshow(finalimage)
 
 
-    save("julia-figs/julia-fig2.png", finalimage)
+    save("julia-fig2.png", finalimage)
 end
 
 

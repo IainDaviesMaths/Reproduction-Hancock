@@ -1,9 +1,15 @@
+"Seed the RNG to a fixed value.  For reproducibility."
+function seedRNG()
+    Random.seed!(1234);    
+end
+
+
+"Save the 15 standard images into standard_image_base."
 function SaveStandardImageBase()
-    #Save the 15 standard images into standard_image_base.
     standard_image_base = zeros(256,256,15);
 
     for p = 1:15
-        file = @sprintf("input-images/images%d.gif", p)
+        file = @sprintf("../input-images/images%d.gif", p)
         image = load(file)
         i = Gray.(image)
         standard_image_base[:,:,p] = i
@@ -13,6 +19,7 @@ function SaveStandardImageBase()
 end
 
 
+"Plot Figure 1"
 function PlotFigure1()
     standard_image_base = SaveStandardImageBase()
     mosaic = mosaicview(standard_image_base; nrow = 3)
@@ -21,11 +28,8 @@ end
 
 
 
-######################################################################
+"Find mean grey level of 20000 samples of side_pixel^2 samples of images."
 function MeanGreyLevel(side_pixels, image_base, num_image)
-    ## MEANGREYLEVEL finds mean grey level of 20000 samples of side_pixel^2
-    ## samples of images.
-
 	# Extract dimensions of images in the image_base. All images in the 
 	# image_base must have same dimension.
 	(dim_x, dim_y) = size(image_base);
@@ -45,18 +49,18 @@ end
 
 
 
+"""
+Simulate the learning process of the network according to Sanger's rule.
 
+num_unit       Number of output units in the network.
+side_pixels    Number of pixels in a side of the presented images.
+image_base     The database of images to be sampled from.
+num_image      Number of images in the database.
+meangrey       The mean grey level of 20000 samples of the given size from
+               the database. 
+rotation_angle Images will be rotated by this number of degrees
+"""
 function LearningProcess(num_unit, side_pixels, image_base, num_image,meangrey, rotation_angle)
-    ##LEARNINGPROCESS simulates the learning process of the network according to
-    ##Sanger's rule
-
-    ##num_unit       Number of output units in the network.
-    ##side_pixels    Number of pixels in a side of the presented images.
-    ##image_base     The database of images to be sampled from.
-    ##num_image      Number of images in the database.
-    ##meangrey       The mean grey level of 20000 samples of the given size from
-    ##               the database. 
-    ##rotation_angle Images will be rotated by this number of degrees
 
 	##Extract dimensions of images in the image_base. All images in the 
 	##image_base must have same dimension.
@@ -97,11 +101,8 @@ function LearningProcess(num_unit, side_pixels, image_base, num_image,meangrey, 
     
 end
 
-
+"Create a SIZE by SIZE array with gaussian values centred in the middle."
 function Gaussian( size )
-    ## GAUSSIAN creates a size by size array with gaussian values centred in the
-    ## middle.
-
     sigma = size*5.0/32;
 
     array = zeros(size,size);
@@ -118,11 +119,12 @@ function Gaussian( size )
 
 end
 
-
+"""
+SANGERUPDATE updates the weights of the connections between input pixels
+and output units given the presentation of an image according to Sanger's
+rule.
+"""
 function sangerupdate( image_vec, weights, learn_rate )
-    ## SANGERUPDATE updates the weights of the connections between input pixels
-    ## and output units given the presentation of an image according to Sanger's
-    ## rule.
 
     ## Extract number of pixels in image.
     num_pixels = length(image_vec);
@@ -148,12 +150,12 @@ function sangerupdate( image_vec, weights, learn_rate )
 end
 
 
-
+"Plot Figure 2"
 function PlotFigure2()
     side_pixels = 64
     num_units = 15
     
-    # Fix seed (TO BE DONE)
+    seedRNG()
     
     # Save the 15 images into a database
     num_image = 15
@@ -192,14 +194,12 @@ end
 
 ######################################################################
 
-
+"Save the 15 standard images into standard_image_base."
 function SaveExtendedImageBase()
-
-    ## Save the 15 standard images into standard_image_base.
     extended_image_base = zeros(256,256,40);
-    part1 = [@sprintf("input-images/images%d.gif", x) for x in 1:15]
-    part2 = [@sprintf("input-images/new%d.gif", x) for x in 1:15]
-    part3 = [@sprintf("input-images/two%d.gif", x) for x in 0:9]
+    part1 = [@sprintf("../input-images/images%d.gif", x) for x in 1:15]
+    part2 = [@sprintf("../input-images/new%d.gif", x) for x in 1:15]
+    part3 = [@sprintf("../input-images/two%d.gif", x) for x in 0:9]
     ims  = [ part1; part2; part3 ]
 
     for p in 1:40
@@ -210,11 +210,12 @@ function SaveExtendedImageBase()
     return extended_image_base
 end
 
+"Plot Figure 3."
 function PlotFigure3()
     side_pixels = 64
     num_units = 15
     
-    # Fix seed (TO BE DONE)
+    seedRNG()
     
     # Save the 15 images into a database
     num_image = 40
@@ -246,15 +247,15 @@ function PlotFigure3()
     ##imshow(finalimage)
 
 
-    save("julia-figs/julia-fig3.png", finalimage)
+    save("julia-fig3.png", finalimage)
 end
 
-
+"Plot Figure 4."
 function PlotFigure4()
     side_pixels = 64
     num_units = 15
     
-    # Fix seed (TO BE DONE)
+    seedRNG()
     
     # Save the 15 images into a database
     num_image = 15
@@ -287,19 +288,16 @@ function PlotFigure4()
     ##imshow(finalimage)
 
 
-    save("julia-figs/julia-fig4.png", finalimage)
+    save("julia-fig4.png", finalimage)
 end
 
 
 
 
-
+"Plot Figure 5."
 function PlotFigure5()
-    ## Plot Figure 5
-
     ## Generate weights for 15 image case
-
-	# Fix seed (TO BE DONE)
+    seedRNG()
 
     ## Simulation parameters
     side_pixels = 64;
@@ -389,15 +387,12 @@ function PlotFigure5()
              xlabel = "Component Number", ylabel = "Output Variance", label = "15 images",
              xaxis = :log, yaxis = :log, seriestype = :scatter);
     plot!(1:15,variance40[:], label = "40 images", seriestype = :scatter);
-    png(p, "julia-figs/julia-fig5.png")
+    png(p, "julia-fig5.png")
 end
 
-
+"Plot Figure 6"
 function PlotFigure6()
-
-    ## Plot Figure 6
-
-	# Fix seed (TO BE DONE)
+    seedRNG()
 
     ## Double scale:
 
@@ -465,29 +460,29 @@ function PlotFigure6()
 
     ##imshow(finalimage2)
     mosaic = mosaicview(finalimage, finalimage2)
-    save("julia-figs/julia-fig6.png", mosaic)
+    save("julia-fig6.png", mosaic)
 
 end
 
-
+"Save the text image with Century font."
 function SaveTextImageBase()
-    ## Save the text image with Century font.
-    image = load("input-images/textimage.png");
+    image = load("../input-images/textimage.png");
     i = Gray.(image)
     text_image_base = zeros(size(i)[1], size(i)[2], 2);
     text_image_base[:,:,1] = i
     
     ## Save the text image with Calibri font.
-    image = load("input-images/textimage2.png");
+    image = load("../input-images/textimage2.png");
     i = Gray.(image)
     text_image_base[:,:,2] = i
 
     text_image_base
 end
 
+"Plot Figure 7."
 function PlotFigure7()
     
-    # Fix seed (TO BE DONE)
+    seedRNG()
     
     ## Save the text with Century font.
 	num_image = 1;
@@ -588,13 +583,12 @@ function PlotFigure7()
     
     
     mosaic = mosaicview(finalimage1, finalimage2, finalimage3, nrow = 3)
-    save("julia-figs/julia-fig7.png", mosaic)
+    save("julia-fig7.png", mosaic)
 end
 
-
+"Plot Figure 8."
 function PlotFigure8() 
-
-	# Fix seed (TO BE DONE)
+    seedRNG()
 
     ## Save the text with Century font.
 	num_image = 1;
@@ -643,19 +637,20 @@ function PlotFigure8()
     superimp = (superimp .- min) ./ (max - min)
     
     mosaic = mosaicview(text_image, comp, superimp, nrow = 1)
-    save("julia-figs/julia-fig8.png", mosaic)
+    save("julia-fig8.png", mosaic)
 
    return comp
 end
 
+"Plot Figure 9."
 function PlotFigure9()
     
-    # Fix seed (TO BE DONE)
+    seedRNG()
     
     ## Save the text with Calibri font.
-	num_image = 1;
-	text_image_base = SaveTextImageBase();
-	text_image = text_image_base[:,:,2];
+    num_image = 1;
+    text_image_base = SaveTextImageBase();
+    text_image = text_image_base[:,:,2];
     
     ## Largest scale
     ## Simulation parameters
@@ -751,5 +746,5 @@ function PlotFigure9()
     
     
     mosaic = mosaicview(finalimage1, finalimage2, finalimage3, nrow = 3)
-    save("julia-figs/julia-fig9.png", mosaic)
+    save("julia-fig9.png", mosaic)
 end

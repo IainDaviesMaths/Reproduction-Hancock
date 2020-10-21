@@ -7,9 +7,9 @@ jupyter:
       format_version: '1.1'
       jupytext_version: 1.1.0
   kernelspec:
-    display_name: Julia 1.5.1
+    display_name: Julia 1.1.0
     language: julia
-    name: julia-1.5
+    name: julia-1.1
 ---
 
 

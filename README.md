@@ -19,5 +19,5 @@ The Matlab code was run using MATLAB v9.6 and Image Processing Toolbox v10.4. Th
 
 ## Binder
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/IainDaviesMaths/Reproduction-Hancock/master?filepath=julia-figures.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/IainDaviesMaths/Reproduction-Hancock/master?filepath=julia-code/julia-figures.ipynb)
 

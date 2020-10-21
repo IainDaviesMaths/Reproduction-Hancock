@@ -24,7 +24,8 @@ using Images
 using ImageMagick
 using Printf
 using LinearAlgebra             # for norm(.)
-using Statistics       
+using Statistics
+using Random
 ```
 
 
@@ -102,11 +103,19 @@ PlotFigure8()
 plot(load("julia-fig8.png"))
 ```
 
+## Figure 9
+
+
+```julia
+PlotFigure9()
+plot(load("julia-fig9.png"))
+```
+
 ## Notes
 
-Convert the markdown using `jupytext --to notebook  test.md`
+Convert the markdown using `jupytext --to notebook  julia-figures.md`
 
-launch the notebook using `jupyter notebook test.ipynb`
+launch the notebook using `jupyter notebook julia-figures.ipynb`
 
 Get the list of kernelspecs using `jupyter kernelspec list`; to add
 the Julia kernel, add the IJulia package for that version of Julia.
